@@ -8,8 +8,17 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-         <div class="w-[905px] h-[461px] bg-slate-500 flex justify-center">
-             <div class="w-[505px] h-[400px] bg-slate-900 mt-[20px] rounded-[10px] shadow-2xl shadow-black text-white">
+  <div class="w-[100%] h-[60px] bg-[rgb(49,10,12)] relative ">
+    <nav class="">
+        <div class="text-white p-[10px] absolute left-[100px] text-[25px] font-bold "><p>DEVILS</p></div>
+        <div class="text-white absolute left-[290px] top-[17px]"><span><a href="{{url('/')}}">HOME</a></span></div>
+        <div class="text-white absolute left-[390px] top-[17px]"><span><a href="{{url('/customer/view')}}">VIEW</a></span></div>
+        <div class="text-white absolute left-[490px] top-[17px]"><span><a href="{{url('/register')}}">REGISTER</a></span></div>
+
+    </nav>
+</div>
+         <div class="w-[100%] h-[100vh] bg-slate-900 flex justify-center">
+             <div class="w-[505px] h-[400px] bg-slate-700 mt-[20px] rounded-[10px] shadow-2xl shadow-black text-white">
               <form action="{{url('/')}}/register" method="post">
                 @csrf
                  <h1 class="border-b-[3px] border-[#ccc] py-[4px] text-center font-[30px] text-[20px]">Customer Registration</h1>

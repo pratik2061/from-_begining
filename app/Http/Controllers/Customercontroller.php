@@ -26,5 +26,30 @@ class Customercontroller extends Controller
         $customer->gender=$request['gender'];
         $customer->address=$request['address'];
         $customer->save();
-}
+
+        return redirect('/customer/view');
+     }
+          public function view(){
+            $customers = Customer::all();
+           $data= compact('customers');
+              return view('/customer/view')->with($data); 
+          } 
+                  public function delete($id){
+                    $customer = Customer::find($id);
+                    if (!is_null($customer) ){
+                        $customer->delete();
+
+                    }
+                    return redirect('customer/view');
+                  }
+                  public function edit($id){
+                    $customer = Customer::find($id);
+                    if(is_null($customer)){
+                        return view ('customer/view');
+                    }
+                    else{
+                        $data = compact('customer');
+                        return view ('customer.register');
+                    }
+                  }
 }
