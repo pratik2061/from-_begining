@@ -19,6 +19,12 @@ use App\Http\Controllers\Customercontroller;
 
 
 //new
+route::get('/', function(){
+  return view('customer.index');
+});
 route::get('/register',[Customercontroller::class,'index']);
 route::post('/register',[Customercontroller::class,'show']);
+route::get('/customer/view',[Customercontroller::class,'view']);
+route::get('/customer/delete/{id}',[Customercontroller::class,'delete']);
+route::get('/customer/edit/{id}',[Customercontroller::class,'edit']);
 
