@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Select</title>
+    <title>TRash</title>
     @vite('resources/css/app.css')
 </head>
 <body>
@@ -35,11 +35,11 @@
             <td>{{$customer->gender}}</td>
             <td>{{$customer->address}}</td>
             <td>
-                <button class="ml-[50px] bg-[rgb(200,0,0)] px-[10px] py-[3px] rounded-[3px] text-white"><a href="{{url('/customer/delete')}}/{{$customer->customer_id}}">TRASH</a></button>
-                <button class=" bg-[rgb(0,150,0)] px-[10px] py-[3px] rounded-[3px] text-white"><a href="{{url('/customer/edit')}}/{{$customer->customer_id}}">EDIT</a></button>
-                <button class=" bg-[rgb(33,51,88)] px-[10px] py-[3px] rounded-[3px] text-white"><a href="{{url('/customer/trash')}}">Recycle Bin</a></button>
+                <button class="ml-[50px] bg-[rgb(200,0,0)] px-[10px] py-[3px] rounded-[3px] text-white"><a href="{{url('/customer/forcedelete')}}/{{$customer->customer_id}}">DELETE</a></button>
+                {{-- <button class=" bg-[rgb(0,150,0)] px-[10px] py-[3px] rounded-[3px] text-white"><a href="{{url('/customer/edit')}}/{{$customer->customer_id}}">EDIT</a></button> --}}
+                <button class=" bg-[rgb(190,174,66)] px-[10px] py-[3px] rounded-[3px] text-white"><a href="{{url('/customer/restore')}}/{{$customer->customer_id}}">RESTORE</a></button>
 
-
+                <button class=" bg-[rgb(43,121,97)] px-[10px] py-[3px] rounded-[3px] text-white"><a href="{{url('/customer/view')}}">BACK</a></button>
             </td>
           </tr>
           @endforeach

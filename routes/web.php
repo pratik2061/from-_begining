@@ -26,5 +26,12 @@ route::get('/register',[Customercontroller::class,'index']);
 route::post('/register',[Customercontroller::class,'show']);
 route::get('/customer/view',[Customercontroller::class,'view']);
 route::get('/customer/delete/{id}',[Customercontroller::class,'delete']);
+route::get('/customer/forcedelete/{id}',[Customercontroller::class,'forcedelete']);
+route::get('/customer/restore/{id}',[Customercontroller::class,'restore']);
 route::get('/customer/edit/{id}',[Customercontroller::class,'edit']);
+route::get('customer/trash',[Customercontroller::class, 'trash']);
+//session
+// route::get('/get-session', function(){
+//      $session = session()->all();
+// });
 
