@@ -73,4 +73,10 @@ class Customercontroller extends Controller
                         return view ('customer/register');
                     }
                   }
+
+                  public function upload(Request $request){
+                    $filename = time()."-netflix." . $request->file('image')->getClientOriginalExtension();
+                   $request->file('image')->storeAs('uploads' , $filename);
+                   return redirect('/');     
+                  }
 }
