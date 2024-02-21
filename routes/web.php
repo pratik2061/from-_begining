@@ -24,12 +24,16 @@ route::get('/', function(){
 });
 route::get('/register',[Customercontroller::class,'index']);
 route::post('/register',[Customercontroller::class,'show']);
-route::get('/customer/view',[Customercontroller::class,'view']);
-route::get('/customer/delete/{id}',[Customercontroller::class,'delete']);
-route::get('/customer/forcedelete/{id}',[Customercontroller::class,'forcedelete']);
-route::get('/customer/restore/{id}',[Customercontroller::class,'restore']);
-route::get('/customer/edit/{id}',[Customercontroller::class,'edit']);
-route::get('customer/trash',[Customercontroller::class, 'trash']);
+
+Route::group(['prefix'=>'/customer'], function(){
+  route::get('/view',[Customercontroller::class,'view']);
+  route::get('/delete/{id}',[Customercontroller::class,'delete']);
+  route::get('/forcedelete/{id}',[Customercontroller::class,'forcedelete']);
+  route::get('/restore/{id}',[Customercontroller::class,'restore']);
+  route::get('/edit/{id}',[Customercontroller::class,'edit']);
+  route::get('/trash',[Customercontroller::class, 'trash']);
+});
+
 Route::get('/upload', function(){
   return view('customer/upload');
 });
