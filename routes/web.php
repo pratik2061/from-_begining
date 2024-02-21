@@ -30,6 +30,11 @@ route::get('/customer/forcedelete/{id}',[Customercontroller::class,'forcedelete'
 route::get('/customer/restore/{id}',[Customercontroller::class,'restore']);
 route::get('/customer/edit/{id}',[Customercontroller::class,'edit']);
 route::get('customer/trash',[Customercontroller::class, 'trash']);
+Route::get('/upload', function(){
+  return view('customer/upload');
+});
+route::post('/upload',[Customercontroller::class,'upload']);
+
 //session
 // route::get('/get-session', function(){
 //      $session = session()->all();
