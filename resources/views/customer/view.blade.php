@@ -30,23 +30,23 @@
     <table class="table-auto absolute top-[150px] left-[10px] ">
         <thead class="border-[2px] border-black">
           <tr>
-            <th class="p-[5px] border-x-[2px] border-black text-center ">Id</th>
-            <th class="p-[5px] border-x-[2px] border-black text-center ">Name</th>
-            <th class="p-[5px] border-x-[2px] border-black text-center ">Email</th>
-            <th class="p-[5px] border-x-[2px] border-black text-center ">Gender</th>
-            <th class="p-[5px] border-x-[2px] border-black text-center ">Address</th>
-            <th class="p-[5px] border-x-[2px] border-black text-center pl-[100px]">Action</th>
+            <th class="p-[5px] border-x-[1px] border-black text-center ">Id</th>
+            <th class="p-[5px] border-x-[1px] border-black text-center ">Name</th>
+            <th class="p-[5px] border-x-[1px] border-black text-center ">Email</th>
+            <th class="p-[5px] border-x-[1px] border-black text-center ">Gender</th>
+            <th class="p-[5px] border-x-[1px] border-black text-center ">Address</th>
+            <th class="p-[5px] border-x-[1px] border-black text-center pl-[100px]">Action</th>
          </tr>
         </thead>
         <tbody class=" left-[30px]">
             @foreach ( $customers as $customer )
           <tr class="border-[2px] border-black">
-            <td class="p-[3px] border-x-[2px] border-black text-center">{{$customer->customer_id}}</td>
-            <td class="p-[3px] border-x-[2px] border-black text-center">{{$customer->name}}</td>
-            <td class="p-[3px] border-x-[2px] border-black text-center">{{$customer->email}}</td>
-            <td class="p-[3px] border-x-[2px] border-black text-center">{{$customer->gender}}</td>
-            <td class="p-[3px] border-x-[2px] border-black text-center">{{$customer->address}}</td>
-            <td class="p-[5px] border-x-[2px] border-black ">
+            <td class="p-[3px] border-x-[1px] border-black text-center">{{$customer->customer_id}}</td>
+            <td class="p-[3px] border-x-[1px] border-black text-center">{{$customer->name}}</td>
+            <td class="p-[3px] border-x-[1px] border-black text-center">{{$customer->email}}</td>
+            <td class="p-[3px] border-x-[1px] border-black text-center">{{$customer->gender}}</td>
+            <td class="p-[3px] border-x-[1px] border-black text-center">{{$customer->address}}</td>
+            <td class="p-[5px] border-x-[1px] border-black ">
                 <button class="ml-[50px] bg-[rgb(200,0,0)] px-[10px] py-[3px] rounded-[3px] text-white"><a href="{{url('/customer/delete')}}/{{$customer->customer_id}}">TRASH</a></button>
                 <button class=" bg-[rgb(0,150,0)] px-[10px] py-[3px] rounded-[3px] text-white"><a href="{{url('/customer/edit')}}/{{$customer->customer_id}}">EDIT</a></button>
                 <button class=" bg-[rgb(33,51,88)] px-[10px] py-[3px] rounded-[3px] text-white"><a href="{{url('/customer/trash')}}">Recycle Bin</a></button>
